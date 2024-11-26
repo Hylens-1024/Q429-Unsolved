@@ -4,20 +4,14 @@ int cache[20] = {0};
 int count = 1;
 int m, n;
 
-void iter(int current, int remaining, int max)
+void iter(int current, int acc)
 {
-    if(remaining == 0)
+    if (current == n)
     {
-        int sum = 0;
-        for(int i = 0; i < current; i++)
-        {
-            sum += cache[i];
-        }
-
-        if(sum == m)
+        if(acc == m)
         {
             printf("[%d]:", count);
-            for(int i = 0; i < current; i++)
+            for (int i = 0; i < current; i++)
             {
                 printf("%d", cache[i]);
             }
@@ -28,10 +22,11 @@ void iter(int current, int remaining, int max)
         return;
     }
 
-    for(int i = max; i >= 1; i--)
+    int max = current == 0 ? m : cache[current - 1];
+    for (int i = max; i >= 1; i--)
     {
         cache[current] = i;
-        iter(current + 1, remaining - 1, i);
+        iter(current + 1, acc + i);
     }
 }
 
@@ -42,7 +37,7 @@ int main()
     printf("Input their sum: ");
     scanf("%d", &m);
 
-    iter(0, n, m);
+    iter(0, 0);
 
     return 0;
 }
