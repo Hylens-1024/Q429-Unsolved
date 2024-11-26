@@ -1,0 +1,21 @@
+Q429.(语言: C)满足特异条件的数列。输入m和n（20≥m≥n≥0），求出满足以下方程式的正整数数列i1,i2,…,in，使得i1+i2+…+in=m，且i1≥i2≥…≥in。例如：
+当n=4，m=8时，将得到如下5个数列：
+5 1 1 1  4 2 1 1  3 3 1 1  3 2 2 1  2 2 2 2
+**输入格式要求："%d" 提示信息："Please enter requried terms (<=10):"
+                               "                             their sum:"
+**输出格式要求："There are following possible series:\n" "[%d]:" "%d"
+
+程序运行示例：
+Please enter requried terms (<=10):4 11
+                             their sum:There are following possible series:
+[1]:8111
+[2]:7211
+[3]:6311
+[4]:5411
+[5]:6221
+[6]:5321
+[7]:4421
+[8]:4331
+[9]:5222
+[10]:4322
+[11]:3332
